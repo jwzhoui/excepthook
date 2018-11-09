@@ -4,7 +4,7 @@ import traceback
 
 def quiet_errors(*args,**kwargs):
     err = ''.join(traceback.format_exception(*args,**kwargs))
-    print err
+    sys.stderr.write(err)
     # RedisCache.inset_exc_to_redis(err)
     from execepthook.redis_cache import def_inset_exc_to_redis
     def_inset_exc_to_redis(err)

@@ -11,9 +11,7 @@ REDIS_NODES = [
 REDIS_PASSWORD = None
 MAX_CONNECTIONS = None
 
-# poi 缓存时间
-POI_STATUS_OK_REDIS_EXPIRE = 60 * 60 * 24
-POI_STATUS_FAIL_REDIS_EXPIRE = 60 * 60
-# poi缓存key开头
+
+# 缓存list名称
 REDIS_EXC_KEY = 'not_catch_exception'
 
