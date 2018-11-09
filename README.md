@@ -6,6 +6,9 @@
 ### excepthook在python项目中的使用
 
 ```
+# encoding: utf-8
+import execepthook
+import execepthook.hq_excepthook
 import time
 print time.time()
 
