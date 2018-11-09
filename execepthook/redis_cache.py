@@ -1,14 +1,10 @@
 # encoding: utf-8
-import sys
+import settings
 import redis
 
 class RedisCache(object):
     __instance = None
     _instance = None
-    __REDIS_HOST = '118.126.117.140'
-    __REDIS_PORT = 6379
-    __EXC_KEY = 'not_catch_exception'
-
     @staticmethod
     def create_pool(self):
         redis_config = self.redis_nodes[0]
@@ -25,13 +21,10 @@ class RedisCache(object):
             cls.__instance = object.__new__(cls)
         return cls.__instance
 
-    def __init__(self, __REDIS_HOST=None,__REDIS_PORT=None):
-        self.redis_nodes = [
-            {'host': __REDIS_HOST, 'port': __REDIS_PORT},
-            # {'host': 'codis-hotel.haoqiao.com', 'port': 30000},
-        ]
-        self.password = None
-        self.max_connections = None
+    def __init__(self):
+        self.redis_nodes = settings.REDIS_NODES
+        self.password = settings.REDIS_PASSWORD
+        self.max_connections = settings.MAX_CONNECTIONS
         try:
             if not hasattr(RedisCache, 'pool'):
                 RedisCache.create_pool(self)
@@ -46,7 +39,7 @@ class RedisCache(object):
         #获取链接
         """
 
-        return RedisCache(cls.__REDIS_HOST,cls.__REDIS_PORT)._connection
+        return RedisCache()._connection
 
     @classmethod
     def inset_exc_to_redis(cls,err):
@@ -55,9 +48,9 @@ class RedisCache(object):
         """
         # print 'classmethod inset_exc_to_redis'
         # time.sleep(5)
-        __EXC_KEY = cls.__EXC_KEY
+
         # print 'exc_key'+__EXC_KEY,err
-        return cls.get_connection().lpush(__EXC_KEY,err)
+        return cls.get_connection().lpush(settings.REDIS_EXC_KEY,err)
 
 def hq_thread_inset(err):
     print 'hq_thread_inset'
@@ -66,3 +59,5 @@ def hq_thread_inset(err):
 
 def def_inset_exc_to_redis(err):
     RedisCache.inset_exc_to_redis(err)
+if __name__ == '__main__':
+    def_inset_exc_to_redis('123')
