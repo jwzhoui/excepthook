@@ -2,9 +2,6 @@
 import sys
 import redis
 
-
-sys.path.append('/opt/space/urllib1/')
-
 class RedisCache(object):
     __instance = None
     _instance = None

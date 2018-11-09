@@ -1,15 +1,6 @@
 # encoding: utf-8
 import sys
-import time
 import traceback
-
-from multiprocessing import Process
-
-
-
-sys.path.append('/opt/space/urllib1/')
-
-
 
 def quiet_errors(*args,**kwargs):
     err = ''.join(traceback.format_exception(*args,**kwargs))
