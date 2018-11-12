@@ -7,7 +7,7 @@
 
 ```
 # encoding: utf-8
-# 需在导包最上层
+# 需在process,Thread,gevent,类似异步操作前导入
 import execepthook
 import execepthook.hq_excepthook
 import time
