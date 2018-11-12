@@ -1,5 +1,0 @@
-0000000000000000000000000000000000000000 529441e186d74aa83d9a579ad46263546101e29b jwzhoui <jwzhoui@isoftstone.com> 1516864598 +0800	clone: from http://git.bjv30.isscloud.com/cloudgo/python-logclient.git
-529441e186d74aa83d9a579ad46263546101e29b 3bb16c5ec5938a5f5ca655be936936e0ff211c14 jwzhoui <jwzhoui@isoftstone.com> 1516864733 +0800	checkout: moving from master to develop
-3bb16c5ec5938a5f5ca655be936936e0ff211c14 8ef91388396b7f77a0ea71135c322a4c0e301b59 jwzhoui <jwzhoui@isoftstone.com> 1516864739 +0800	checkout: moving from develop to stable-v2.0.0
-8ef91388396b7f77a0ea71135c322a4c0e301b59 3bb16c5ec5938a5f5ca655be936936e0ff211c14 jwzhoui <jwzhoui@isoftstone.com> 1516864961 +0800	checkout: moving from stable-v2.0.0 to develop
-3bb16c5ec5938a5f5ca655be936936e0ff211c14 999b69053448083011870f771d49e6c3f2a79e2f cclina <cclina@isoftstone.com> 1541678337 +0800	commit: init
